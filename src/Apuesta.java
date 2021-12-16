@@ -9,6 +9,11 @@ import javax.swing.WindowConstants;
  * and open the template in the editor.
  */
 
+
+/**
+ * 
+ * @author FelixGomezEnriquez
+ */
 public class Apuesta extends javax.swing.JFrame {
 
    
@@ -121,6 +126,11 @@ public class Apuesta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * 
+     * @param evt evento 
+     */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         CrearPartido agregarpartido = new CrearPartido(this);
         agregarpartido.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -129,11 +139,18 @@ public class Apuesta extends javax.swing.JFrame {
         agregarpartido.setTitle("Agregar nuevo partido");
         agregarpartido.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
-
+    /**
+     * 
+     * @param evt evento
+     */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borraPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
 
+    /**
+     * 
+     * @param evt evento
+     */
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
@@ -141,11 +158,21 @@ public class Apuesta extends javax.swing.JFrame {
     }//GEN-LAST:event_bResetearActionPerformed
 
    
+    /**
+     * 
+     * @param n1 numero 1
+     * @param n2 numero 2
+     * @return numero aleatorio
+     */
     public int Aleatorio(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
     
+    /**
+     * 
+     * @param evt evento
+     */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
@@ -172,7 +199,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+    /**
+     * 
+     * @param partido Partido nuevo
+     */
     public void partidoNuevo(String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -187,6 +217,10 @@ public class Apuesta extends javax.swing.JFrame {
     }
     
   
+    /**
+     * 
+     * @param indice indice
+     */
     public void borraPartido(int indice)
     {
         DefaultListModel modelonuevoquiniela = new DefaultListModel();
@@ -213,6 +247,10 @@ public class Apuesta extends javax.swing.JFrame {
     }
     
    
+    /**
+     * 
+     * @param args argumentos
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
